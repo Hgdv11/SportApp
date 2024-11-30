@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ==== Document Title ==== -->
+    <title>FanFrenzy - Inicio</title>
+
+    <!-- ==== Document Meta ==== -->
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- ==== Favicons ==== -->
+    <link rel="icon" href="./img/logo.png" type="image/png" />
+
+    <!-- ==== Google Font ==== -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700"
+    />
+
+    <!-- ==== Font Awesome ==== -->
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <!-- ==== Bootstrap Framework ==== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <!-- ==== Bar Rating Plugin ==== -->
+    <link rel="stylesheet" href="css/fontawesome-stars-o.min.css" />
+    <script
+      src="https://kit.fontawesome.com/393868291d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ==== Main Stylesheet ==== -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ==== Responsive Stylesheet ==== -->
+    <link rel="stylesheet" href="css/responsive-style.css" />
+
+    <!-- ==== Theme Color Stylesheet ==== -->
+    <link
+      rel="stylesheet"
+      href="css/colors/theme-color-1.css"
+      id="changeColorScheme"
+    />
+
+    <!-- ==== Custom Stylesheet ==== -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <link rel="stylesheet" href="./slider-style.css" />
+    <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="team-style.css" />
+  </head>
+  <body>
+    <header class="header--section header--style-1">
+      <!-- Tu header permanece exactamente igual -->
+      <div
+        class="header--navbar style--1 navbar bd--color-1 bg--color-1"
+        data-trigger="sticky"
+      >
+        <div class="container">
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#headerNav"
+              aria-expanded="false"
+              aria-controls="headerNav"
+            >
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="headerNav" class="navbar-collapse collapse">
+            <div class="nav-container">
+              <a href="./home-1.html" class="logo">
+                <img src="./img/logo.png" alt="Logo" />
+              </a>
+              <ul class="header--menu-links nav" data-trigger="hoverIntent">
+                <li><a href="./home-1.html">Inicio</a></li>
+                <li><a href="./scores.html">Puntos</a></li>
+                <li><a href="./404.html">Playoffs</a></li>
+                <li><a href="./news.html">Noticias</a></li>
+                <li><a href="./contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="team-container">
+      <section id="team-info">
+        <div class="team-details">
+          <img id="team-logo" alt="Team Logo" class="team-logo" />
+          <div class="team-info-text">
+            <h1 id="team-name" class="team-name"></h1>
+            <p id="team-record" class="team-record"></p>
+          </div>
+        </div>
+        <div class="team-meta">
+          <p id="team-city" class="team-meta-item"></p>
+          <p id="team-stadium" class="team-meta-item"></p>
+        </div>
+      </section>
+
+      <section id="team-news">
+        <h2 class="news-title">Últimas Noticias</h2>
+        <div id="news-container" class="news-container"></div>
+      </section>
+    </main>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const selectedTeam = urlParams.get("team");
+      const jsonPath = "teams.json";
+
+      fetch(jsonPath)
+        .then((response) => response.json())
+        .then((data) => {
+          const team = data.find(
+            (t) => t.team.toLowerCase() === selectedTeam.toLowerCase()
+          );
+
+          if (team) {
+            document.title = `FanFrenzy - ${team.team}`;
+            document.getElementById("team-name").textContent = team.team;
+            document.getElementById("team-logo").src = team.logo;
+            document.getElementById("team-logo").alt = `Logo de ${team.team}`;
+            document.getElementById(
+              "team-record"
+            ).textContent = `Récord: ${team.record}`;
+            document.getElementById(
+              "team-city"
+            ).textContent = `Ciudad: ${team.city}`;
+            document.getElementById(
+              "team-stadium"
+            ).textContent = `Estadio: ${team.stadium}`;
+
+            const newsContainer = document.getElementById("news-container");
+            team.news.forEach((news) => {
+              const newsItem = document.createElement("div");
+              newsItem.classList.add("news-item");
+              newsItem.innerHTML = `
+                <h3>${news.title}</h3>
+                <img src="${news.image}" alt="Imagen de la noticia">
+                <p>${news.summary}</p>
+              `;
+              newsContainer.appendChild(newsItem);
+            });
+          } else {
+            document.body.innerHTML =
+              "<p>Equipo no encontrado. Regresa a la página principal.</p>";
+          }
+        })
+        .catch((error) => console.error("Error al cargar el JSON:", error));
+    </script>
+
+<footer class="footer--section">
+    <!-- Footer Widgets Start -->
+    <div class="footer--widgets pd--30-0 bg--color-2">
+        <div class="container">
+            <div class="row AdjustRow">
+                <!-- Sobre Nosotros -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Sobre Nosotros</h2>
+                            <i class="icon fa fa-exclamation"></i>
+                        </div>
+                        <div class="about--widget">
+                            <div class="content">
+                                <p>En FanFrenzy, conectamos a los fanáticos con las últimas noticias, estadísticas y todo lo que necesitan para vivir la pasión del deporte.</p>
+                            </div>
+                            <div class="action">
+                                <a href="#" class="btn-link">Leer Más<i class="fa flm fa-angle-double-right"></i></a>
+                            </div>
+                            <ul class="nav">
+                                <li>
+                                    <i class="fa fa-map"></i>
+                                    <span>Av. Principal 123, Ciudad Falsa, País XYZ</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <a href="mailto:contacto@fanfrenzy.com">contacto@fanfrenzy.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <a href="tel:+123456789">+123 456 789</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces Útiles -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Enlaces Útiles</h2>
+                            <i class="icon fa fa-expand"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Equipos</a></li>
+                                <li><a href="#" class="fa-angle-right">Calendario</a></li>
+                                <li><a href="#" class="fa-angle-right">Términos y Condiciones</a></li>
+                                <li><a href="#" class="fa-angle-right">Noticias Destacadas</a></li>
+                                <li><a href="#" class="fa-angle-right">Contáctanos</a></li>
+                                <li><a href="#" class="fa-angle-right">Política de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publicidad -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Publicidad</h2>
+                            <i class="icon fa fa-bullhorn"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Publica tu Anuncio</a></li>
+                                <li><a href="#" class="fa-angle-right">Precios de Anuncios</a></li>
+                                <li><a href="#" class="fa-angle-right">Planes Mensuales/Anuales</a></li>
+                                <li><a href="#" class="fa-angle-right">Solicita Información</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contrataciones -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Trabaja con Nosotros</h2>
+                            <i class="icon fa fa-user-o"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Oportunidades Disponibles</a></li>
+                                <li><a href="#" class="fa-angle-right">Únete a Nuestro Equipo</a></li>
+                                <li><a href="#" class="fa-angle-right">Envíanos tu CV</a></li>
+                                <li><a href="#" class="fa-angle-right">Trabajos Freelance</a></li>
+                                <li><a href="#" class="fa-angle-right">Proceso de Aplicación</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Widgets End -->
+
+    <!-- Footer Copyright Start -->
+    <div class="footer--copyright bg--color-3">
+        <div class="social--bg bg--color-1" style="background-color: black;""></div>
+        <div class="container">
+            <p class="text float--left">&copy; 2024 <a href="#">FanFrenzy</a>. Todos los derechos reservados</p>
+            <ul class="nav social float--right">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+            </ul>
+            <ul class="nav links float--right">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer Copyright End -->
+</footer>
+
+    <!-- Footer Widgets End -->
+  </body>
+</html>

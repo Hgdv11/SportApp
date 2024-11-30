@@ -1,0 +1,65 @@
+/* General styles for teams page */
+.teams-container {
+    padding: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .teams-card {
+    max-width: 1200px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .teams-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .teams-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  .team-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .team-row img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .team-row a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    flex: 1;
+  }
+  
+  .team-row a:hover {
+    color: #007BFF;
+  }
+  
+  .team-row span {
+    font-size: 14px;
+    color: #666;
+  }
+  

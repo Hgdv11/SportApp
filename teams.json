@@ -1,0 +1,450 @@
+[
+  {
+    "team": "Arizona Cardinals",
+    "logo": "./team-picture-logo/ARI.webp",
+    "city": "Glendale",
+    "stadium": "State Farm Stadium",
+    "record": "3-7",
+    "news": [
+      {
+        "title": "Kyler Murray regresa con fuerza tras lesión",
+        "image": "./img-highlights/ArizonaCardinals.jpg",
+        "summary": "El quarterback lideró a los Cardinals en una victoria inesperada."
+      }
+    ]
+  },
+  {
+    "team": "Atlanta Falcons",
+    "logo": "./team-picture-logo/ATL.webp",
+    "city": "Atlanta",
+    "stadium": "Mercedes-Benz Stadium",
+    "record": "5-5",
+    "news": [
+      {
+        "title": "Desmond Ridder se afianza como QB titular",
+        "image": "./img-highlights/AtlantaFalcons.jpg",
+        "summary": "El joven quarterback ha mostrado madurez en sus recientes actuaciones."
+      }
+    ]
+  },
+  {
+    "team": "Baltimore Ravens",
+    "logo": "./team-picture-logo/BAL.webp",
+    "city": "Baltimore",
+    "stadium": "M&T Bank Stadium",
+    "record": "7-3",
+    "news": [
+      {
+        "title": "Lamar Jackson rompe récord de yardas terrestres",
+        "image": "./img-highlights/BaltimoreRavens.jpg",
+        "summary": "El mariscal de campo sigue demostrando su versatilidad en el campo."
+      }
+    ]
+  },
+  {
+    "team": "Buffalo Bills",
+    "logo": "./team-picture-logo/BUF.webp",
+    "city": "Orchard Park",
+    "stadium": "Highmark Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Stefon Diggs lidera la ofensiva con dos touchdowns",
+        "image": "./img-highlights/BuffaloBills.jpg",
+        "summary": "El receptor estrella fue clave en la victoria frente a los Jets."
+      }
+    ]
+  },
+  {
+    "team": "Carolina Panthers",
+    "logo": "./team-picture-logo/CAR.webp",
+    "city": "Charlotte",
+    "stadium": "Bank of America Stadium",
+    "record": "1-9",
+    "news": [
+      {
+        "title": "Bryce Young muestra mejoras pese a derrota",
+        "image": "./img-highlights/CarolinaPanthers.jpg",
+        "summary": "El novato está empezando a encontrar su ritmo en la NFL."
+      }
+    ]
+  },
+  {
+    "team": "Chicago Bears",
+    "logo": "./team-picture-logo/CHI.webp",
+    "city": "Chicago",
+    "stadium": "Soldier Field",
+    "record": "3-7",
+    "news": [
+      {
+        "title": "Justin Fields regresa de lesión con impacto inmediato",
+        "image": "./img-highlights/ChicagoBears.jpg",
+        "summary": "El QB demostró su valía con una actuación sólida en su retorno."
+      }
+    ]
+  },
+  {
+    "team": "Cincinnati Bengals",
+    "logo": "./team-picture-logo/CIN.webp",
+    "city": "Cincinnati",
+    "stadium": "Paycor Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Joe Burrow lidera una remontada épica",
+        "image": "./img-highlights/CincinnatiBengals.jpg",
+        "summary": "El mariscal de campo mostró su temple en un emocionante juego."
+      }
+    ]
+  },
+  {
+    "team": "Cleveland Browns",
+    "logo": "./team-picture-logo/CLE.webp",
+    "city": "Cleveland",
+    "stadium": "Cleveland Browns Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Myles Garrett sigue dominando la defensa",
+        "image": "./img-highlights/ClevelandBrowns.jpg",
+        "summary": "El defensivo estelar registra otro juego con múltiples capturas."
+      }
+    ]
+  },
+  {
+    "team": "Dallas Cowboys",
+    "logo": "./team-picture-logo/DAL.webp",
+    "city": "Arlington",
+    "stadium": "AT&T Stadium",
+    "record": "7-3",
+    "news": [
+      {
+        "title": "Dak Prescott lidera a los Cowboys en un tiroteo ofensivo",
+        "image": "./img-highlights/DallasCowboys.jpg",
+        "summary": "El QB lanzó para más de 400 yardas en una actuación espectacular."
+      }
+    ]
+  },
+  {
+    "team": "Denver Broncos",
+    "logo": "./team-picture-logo/DEN.webp",
+    "city": "Denver",
+    "stadium": "Empower Field at Mile High",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Russell Wilson encuentra su ritmo con Sean Payton",
+        "image": "./img-highlights/DenverBroncos.jpg",
+        "summary": "El mariscal de campo lideró a los Broncos a su mejor actuación del año."
+      }
+    ]
+  },
+  {
+    "team": "Detroit Lions",
+    "logo": "./team-picture-logo/DET.webp",
+    "city": "Detroit",
+    "stadium": "Ford Field",
+    "record": "8-2",
+    "news": [
+      {
+        "title": "Jared Goff y los Lions son la sorpresa del año",
+        "image": "./img-highlights/DetroitLions.jpg",
+        "summary": "El equipo de Detroit muestra un nivel nunca antes visto en años."
+      }
+    ]
+  },
+  {
+    "team": "Green Bay Packers",
+    "logo": "./team-picture-logo/GB.webp",
+    "city": "Green Bay",
+    "stadium": "Lambeau Field",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Jordan Love muestra destellos de grandeza",
+        "image": "./img-highlights/GreenBayPackers.jpg",
+        "summary": "El nuevo QB empieza a adaptarse al exigente rol en Green Bay."
+      }
+    ]
+  },
+  {
+    "team": "Houston Texans",
+    "logo": "./team-picture-logo/HOU.webp",
+    "city": "Houston",
+    "stadium": "NRG Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "C.J. Stroud confirma su potencial de novato",
+        "image": "./img-highlights/HoustonTexans.jpg",
+        "summary": "El quarterback impresiona con su madurez y precisión en el campo."
+      }
+    ]
+  },
+  {
+    "team": "Indianapolis Colts",
+    "logo": "./team-picture-logo/IND.webp",
+    "city": "Indianapolis",
+    "stadium": "Lucas Oil Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Jonathan Taylor vuelve a su mejor versión",
+        "image": "./img-highlights/IndianapolisColts.jpg",
+        "summary": "El corredor recupera su explosividad y liderazgo en la ofensiva."
+      }
+    ]
+  },
+  {
+    "team": "Jacksonville Jaguars",
+    "logo": "./team-picture-logo/JAX.webp",
+    "city": "Jacksonville",
+    "stadium": "TIAA Bank Field",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Trevor Lawrence consolida su liderazgo",
+        "image": "./img-highlights/JacksonvilleJaguars.jpg",
+        "summary": "El QB demuestra consistencia y madurez en su tercer año."
+      }
+    ]
+  },
+  {
+    "team": "Kansas City Chiefs",
+    "logo": "./team-picture-logo/KC.webp",
+    "city": "Kansas City",
+    "stadium": "GEHA Field at Arrowhead Stadium",
+    "record": "7-3",
+    "news": [
+      {
+        "title": "Patrick Mahomes mantiene su magia",
+        "image": "./img-highlights/KansasCityChiefs.jpg",
+        "summary": "El mariscal de campo sigue siendo la pesadilla de las defensivas rivales."
+      }
+    ]
+  },
+  {
+    "team": "Las Vegas Raiders",
+    "logo": "./team-picture-logo/LV.webp",
+    "city": "Paradise",
+    "stadium": "Allegiant Stadium",
+    "record": "3-7",
+    "news": [
+      {
+        "title": "Jimmy Garoppolo lucha por mantener su puesto",
+        "image": "./img-highlights/LasVegasRaiders.jpg",
+        "summary": "El quarterback busca recuperar la confianza del equipo."
+      }
+    ]
+  },
+  {
+    "team": "Los Angeles Chargers",
+    "logo": "./team-picture-logo/LAC.webp",
+    "city": "Inglewood",
+    "stadium": "SoFi Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Justin Herbert sigue siendo la esperanza del equipo",
+        "image": "./img-highlights/LosAngelesChargers.jpg",
+        "summary": "El QB mantiene vivas las expectativas de Los Angeles."
+      }
+    ]
+  },
+  {
+    "team": "Los Angeles Rams",
+    "logo": "./team-picture-logo/LAR.webp",
+    "city": "Inglewood",
+    "stadium": "SoFi Stadium",
+    "record": "3-7",
+    "news": [
+      {
+        "title": "Matthew Stafford busca recuperar su mejor versión",
+        "image": "./img-highlights/LosAngelesRams.jpg",
+        "summary": "El veterano quarterback intenta reactivar la ofensiva."
+      }
+    ]
+  },
+  {
+    "team": "Miami Dolphins",
+    "logo": "./team-picture-logo/MIA.webp",
+    "city": "Miami Gardens",
+    "stadium": "Hard Rock Stadium",
+    "record": "7-3",
+    "news": [
+      {
+        "title": "Tua Tagovailoa brilla con sus receptores",
+        "image": "./img-highlights/MiamiDolphins.jpg",
+        "summary": "El QB demuestra química con Hill y Waddle en cada partido."
+      }
+    ]
+  },
+  {
+    "team": "Minnesota Vikings",
+    "logo": "./team-picture-logo/MIN.webp",
+    "city": "Minneapolis",
+    "stadium": "U.S. Bank Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Kirk Cousins se mantiene como líder del equipo",
+        "image": "./img-highlights/MinnesotaVikings.jpg",
+        "summary": "El quarterback sigue siendo clave en la estrategia ofensiva."
+      }
+    ]
+  },
+  {
+    "team": "New England Patriots",
+    "logo": "./team-picture-logo/NE.webp",
+    "city": "Foxborough",
+    "stadium": "Gillette Stadium",
+    "record": "2-8",
+    "news": [
+      {
+        "title": "Mac Jones lucha por mantener su posición",
+        "image": "./img-highlights/NewEnglandPatriots.jpg",
+        "summary": "El QB busca recuperar la confianza del entrenador y los aficionados."
+      }
+    ]
+  },
+  {
+    "team": "New Orleans Saints",
+    "logo": "./team-picture-logo/NO.webp",
+    "city": "New Orleans",
+    "stadium": "Caesars Superdome",
+    "record": "5-5",
+    "news": [
+      {
+        "title": "Derek Carr intenta estabilizar al equipo",
+        "image": "./img-highlights/NewOrleansSaints.jpg",
+        "summary": "El nuevo quarterback busca encontrar su ritmo en Nueva Orleans."
+      }
+    ]
+  },
+  {
+    "team": "New York Giants",
+    "logo": "./team-picture-logo/NYG.webp",
+    "city": "East Rutherford",
+    "stadium": "MetLife Stadium",
+    "record": "3-7",
+    "news": [
+      {
+        "title": "Daniel Jones busca recuperarse de lesión",
+        "image": "./img-highlights/NewYorkGiants.jpg",
+        "summary": "El QB trabaja para volver a su mejor nivel tras su recuperación."
+      }
+    ]
+  },
+  {
+    "team": "New York Jets",
+    "logo": "./team-picture-logo/NYJ.webp",
+    "city": "East Rutherford",
+    "stadium": "MetLife Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Zach Wilson lucha por mantener su puesto",
+        "image": "./img-highlights/NewYorkJets.jpg",
+        "summary": "El joven quarterback busca demostrar su potencial."
+      }
+    ]
+  },
+  {
+    "team": "Philadelphia Eagles",
+    "logo": "./team-picture-logo/PHI.webp",
+    "city": "Philadelphia",
+    "stadium": "Lincoln Financial Field",
+    "record": "8-1",
+    "news": [
+      {
+        "title": "Jalen Hurts se consolida como líder",
+        "image": "./img-highlights/PhiladelphiaEagles.jpg",
+        "summary": "El quarterback mantiene a los Eagles como candidatos al campeonato."
+      }
+    ]
+  },
+  {
+    "team": "Pittsburgh Steelers",
+    "logo": "./team-picture-logo/PIT.webp",
+    "city": "Pittsburgh",
+    "stadium": "Acrisure Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Kenny Pickett busca consolidarse",
+        "image": "./img-highlights/PittsburghSteelers.jpg",
+        "summary": "El QB de segundo año intenta llevar a los Steelers a playoffs."
+      }
+    ]
+  },
+  {
+    "team": "San Francisco 49ers",
+    "logo": "./team-picture-logo/SF.webp",
+    "city": "Santa Clara",
+    "stadium": "Levi's Stadium",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Brock Purdy confirma su potencial",
+        "image": "./img-highlights/SanFrancisco49ers.jpg",
+        "summary": "El QB sigue sorprendiendo con su eficacia y liderazgo."
+      }
+    ]
+  },
+  {
+    "team": "Seattle Seahawks",
+    "logo": "./team-picture-logo/SEA.webp",
+    "city": "Seattle",
+    "stadium": "Lumen Field",
+    "record": "6-4",
+    "news": [
+      {
+        "title": "Geno Smith mantiene vivas las esperanzas de Seattle",
+        "image": "./img-highlights/SeattleSeahawks.jpg",
+        "summary": "El quarterback sigue liderando un equipo competitivo."
+      }
+    ]
+  },
+  {
+    "team": "Tampa Bay Buccaneers",
+    "logo": "./team-picture-logo/TB.webp",
+    "city": "Tampa",
+    "stadium": "Raymond James Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Baker Mayfield busca consolidar su liderazgo",
+        "image": "./img-highlights/TampaBayBuccaneers.jpg",
+        "summary": "El QB intenta llevar a los Buccaneers a una racha positiva."
+      }
+    ]
+  },
+  {
+    "team": "Tennessee Titans",
+    "logo": "./team-picture-logo/TEN.webp",
+    "city": "Nashville",
+    "stadium": "Nissan Stadium",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Ryan Tannehill lucha por mantener su posición",
+        "image": "./img-highlights/TennesseeTitans.jpg",
+        "summary": "El quarterback busca recuperar la confianza del equipo."
+      }
+    ]
+  },
+  {
+    "team": "Washington Commanders",
+    "logo": "./team-picture-logo/WAS.webp",
+    "city": "Landover",
+    "stadium": "FedExField",
+    "record": "4-6",
+    "news": [
+      {
+        "title": "Sam Howell muestra potencial de desarrollo",
+        "image": "./img-highlights/WashingtonCommanders.jpg",
+        "summary": "El joven quarterback comienza a mostrar su talento."
+      }
+    ]
+  }
+]

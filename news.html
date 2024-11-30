@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ==== Document Title ==== -->
+    <title>FanFrenzy - Noticias</title>
+    
+    <!-- ==== Document Meta ==== -->
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ==== Favicons ==== -->
+    <link rel="icon" href="./img/logo.png" type="image/png">
+
+    <!-- ==== Google Font ==== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+
+    <!-- ==== Font Awesome ==== -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!-- ==== Bootstrap Framework ==== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- ==== Bar Rating Plugin ==== -->
+    <link rel="stylesheet" href="css/fontawesome-stars-o.min.css">
+    <script src="https://kit.fontawesome.com/393868291d.js" crossorigin="anonymous"></script>
+    
+    <!-- ==== Main Stylesheet ==== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ==== Responsive Stylesheet ==== -->
+    <link rel="stylesheet" href="css/responsive-style.css">
+
+    <!-- ==== Theme Color Stylesheet ==== -->
+    <link rel="stylesheet" href="css/colors/theme-color-1.css" id="changeColorScheme">
+    
+    <!-- ==== Custom Stylesheet ==== -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link rel="stylesheet" href="./slider-style.css">
+
+    <link rel="stylesheet" href="./news-style.css">
+    <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<header class="header--section header--style-1">
+    <div class="header--navbar style--1 navbar bd--color-1 bg--color-1" data-trigger="sticky">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerNav" aria-expanded="false" aria-controls="headerNav">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div id="headerNav" class="navbar-collapse collapse">
+                <div class="nav-container">
+                    <a href="./home-1.html" class="logo">
+                        <img src="./img/logo.png" alt="Logo" />
+                    </a>
+                    <ul class="header--menu-links nav" data-trigger="hoverIntent">
+                        <li><a href="./home-1.html">Inicio</a></li>
+                        <li><a href="./scores.html">Puntos</a></li>
+                        <li><a href="./404.html">Playoffs</a></li>
+                        <li><a href="./news.html">Noticias</a></li>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+
+            <!-- Header Search Form Start -->
+           
+            <!-- Header Search Form End -->
+        </div>
+    </div>
+    <!-- Header Navbar End -->
+</header>
+<!-- News Ticker Start -->
+<section id="team-slider">
+    <!-- Aquí se generará dinámicamente el slider -->
+  </section>
+<!-- News Ticker End -->
+
+<script>
+    // Cargar datos del JSON
+    fetch('teams.json')
+      .then(response => response.json())
+      .then(data => {
+        const slider = document.getElementById('team-slider');
+        data.forEach(team => {
+          // Crear cada tarjeta de equipo
+          const teamCard = document.createElement('div');
+          teamCard.className = 'team-card';
+          teamCard.innerHTML = `
+            <img src="${team.logo}" alt="${team.team}">
+            <p>${team.team}</p>
+          `;
+          // Agregar evento para redirigir a la página del equipo
+          teamCard.addEventListener('click', () => {
+            window.location.href = `team.html?team=${encodeURIComponent(team.team)}`;
+          });
+          slider.appendChild(teamCard);
+        });
+      })
+      .catch(error => console.error('Error loading teams:', error));
+  </script>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1 class="news-header">Últimas noticias</h1>
+  </header>
+
+  <!-- News Section -->
+  <main class="news-container">
+    <div id="news-grid" class="news-grid">
+      <!-- News cards will be dynamically loaded here -->
+    </div>
+  </main>
+
+ 
+
+  <!-- JavaScript to load news dynamically -->
+  <script>
+    // Fetch data from teams.json
+    fetch('teams.json')
+      .then(response => response.json())
+      .then(teams => {
+        const newsGrid = document.getElementById('news-grid');
+
+        // Iterate over each team and add their news
+        teams.forEach(team => {
+          team.news.forEach(news => {
+            const newsCard = `
+              <div class="news-card">
+                <img src="${news.image}" alt="${team.team} - ${news.title}" class="news-image">
+                <div class="news-info">
+                  <h3 class="news-title">${news.title}</h3>
+                  <p class="news-summary">${news.summary}</p>
+                  <p class="news-meta"><strong>${team.team}</strong> - Record: ${team.record}</p>
+                </div>
+              </div>
+            `;
+            newsGrid.innerHTML += newsCard;
+          });
+        });
+      })
+      .catch(error => console.error('Error loading teams.json:', error));
+  </script>
+
+<footer class="footer--section">
+    <!-- Footer Widgets Start -->
+    <div class="footer--widgets pd--30-0 bg--color-2">
+        <div class="container">
+            <div class="row AdjustRow">
+                <!-- Sobre Nosotros -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Sobre Nosotros</h2>
+                            <i class="icon fa fa-exclamation"></i>
+                        </div>
+                        <div class="about--widget">
+                            <div class="content">
+                                <p>En FanFrenzy, conectamos a los fanáticos con las últimas noticias, estadísticas y todo lo que necesitan para vivir la pasión del deporte.</p>
+                            </div>
+                            <div class="action">
+                                <a href="#" class="btn-link">Leer Más<i class="fa flm fa-angle-double-right"></i></a>
+                            </div>
+                            <ul class="nav">
+                                <li>
+                                    <i class="fa fa-map"></i>
+                                    <span>Av. Principal 123, Ciudad Falsa, País XYZ</span>
+                                </li>
+                                <li>
+                                    <i class="fa fa-envelope-o"></i>
+                                    <a href="mailto:contacto@fanfrenzy.com">contacto@fanfrenzy.com</a>
+                                </li>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <a href="tel:+123456789">+123 456 789</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enlaces Útiles -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Enlaces Útiles</h2>
+                            <i class="icon fa fa-expand"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Equipos</a></li>
+                                <li><a href="#" class="fa-angle-right">Calendario</a></li>
+                                <li><a href="#" class="fa-angle-right">Términos y Condiciones</a></li>
+                                <li><a href="#" class="fa-angle-right">Noticias Destacadas</a></li>
+                                <li><a href="#" class="fa-angle-right">Contáctanos</a></li>
+                                <li><a href="#" class="fa-angle-right">Política de Privacidad</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Publicidad -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Publicidad</h2>
+                            <i class="icon fa fa-bullhorn"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Publica tu Anuncio</a></li>
+                                <li><a href="#" class="fa-angle-right">Precios de Anuncios</a></li>
+                                <li><a href="#" class="fa-angle-right">Planes Mensuales/Anuales</a></li>
+                                <li><a href="#" class="fa-angle-right">Solicita Información</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contrataciones -->
+                <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                    <div class="widget">
+                        <div class="widget--title">
+                            <h2 class="h4">Trabaja con Nosotros</h2>
+                            <i class="icon fa fa-user-o"></i>
+                        </div>
+                        <div class="links--widget">
+                            <ul class="nav">
+                                <li><a href="#" class="fa-angle-right">Oportunidades Disponibles</a></li>
+                                <li><a href="#" class="fa-angle-right">Únete a Nuestro Equipo</a></li>
+                                <li><a href="#" class="fa-angle-right">Envíanos tu CV</a></li>
+                                <li><a href="#" class="fa-angle-right">Trabajos Freelance</a></li>
+                                <li><a href="#" class="fa-angle-right">Proceso de Aplicación</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Widgets End -->
+
+    <!-- Footer Copyright Start -->
+    <div class="footer--copyright bg--color-3">
+        <div class="social--bg bg--color-1" style="background-color: black;"></div>
+        <div class="container">
+            <p class="text float--left">&copy; 2024 <a href="#">FanFrenzy</a>. Todos los derechos reservados</p>
+            <ul class="nav social float--right">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+            </ul>
+            <ul class="nav links float--right">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Ayuda</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- Footer Copyright End -->
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ==== Document Title ==== -->
+    <title>FanFrenzy - Inicio</title>
+    
+    <!-- ==== Document Meta ==== -->
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ==== Favicons ==== -->
+    <link rel="icon" href="./img/logo.png" type="image/png">
+
+    <!-- ==== Google Font ==== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+
+    <!-- ==== Font Awesome ==== -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!-- ==== Bootstrap Framework ==== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!-- ==== Bar Rating Plugin ==== -->
+    <link rel="stylesheet" href="css/fontawesome-stars-o.min.css">
+    <script src="https://kit.fontawesome.com/393868291d.js" crossorigin="anonymous"></script>
+    
+    <!-- ==== Main Stylesheet ==== -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- ==== Responsive Stylesheet ==== -->
+    <link rel="stylesheet" href="css/responsive-style.css">
+
+    <!-- ==== Theme Color Stylesheet ==== -->
+    <link rel="stylesheet" href="css/colors/theme-color-1.css" id="changeColorScheme">
+    
+    <!-- ==== Custom Stylesheet ==== -->
+    <link rel="stylesheet" href="css/custom.css">
+
+    <link rel="stylesheet" href="./slider-style.css">
+    <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+    <!-- Preloader Start -->
+    <div id="preloader">
+        <div class="preloader bg--color-1--b" data-preloader="1">
+            <div class="preloader--inner"></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Section Start -->
+        <header class="header--section header--style-1">
+            <div class="header--navbar style--1 navbar bd--color-1 bg--color-1" data-trigger="sticky">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerNav" aria-expanded="false" aria-controls="headerNav">
+                            <span class="sr-only">Toggle Navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+
+                    <div id="headerNav" class="navbar-collapse collapse">
+                        <div class="nav-container">
+                            <a href="#" class="logo">
+                                <img src="./img/logo.png" alt="Logo" />
+                            </a>
+                            <ul class="header--menu-links nav" data-trigger="hoverIntent">
+                                <li><a href="#">Inicio</a></li>
+                                <li><a href="./scores.html">Puntos</a></li>
+                                <li><a href="./404.html">Playoffs</a></li>
+                                <li><a href="./news.html">Noticias</a></li>
+                                <li><a href="./contacto.html">Contacto</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+
+                    <!-- Header Search Form Start -->
+                   
+                    <!-- Header Search Form End -->
+                </div>
+            </div>
+            <!-- Header Navbar End -->
+        </header>
+        <!-- News Ticker Start -->
+        <section id="team-slider">
+            <!-- Aquí se generará dinámicamente el slider -->
+          </section>
+        <!-- News Ticker End -->
+
+        <script>
+            // Cargar datos del JSON
+            fetch('teams.json')
+              .then(response => response.json())
+              .then(data => {
+                const slider = document.getElementById('team-slider');
+                data.forEach(team => {
+                  // Crear cada tarjeta de equipo
+                  const teamCard = document.createElement('div');
+                  teamCard.className = 'team-card';
+                  teamCard.innerHTML = `
+                    <img src="${team.logo}" alt="${team.team}">
+                    <p>${team.team}</p>
+                  `;
+                  // Agregar evento para redirigir a la página del equipo
+                  teamCard.addEventListener('click', () => {
+                    window.location.href = `team.html?team=${encodeURIComponent(team.team)}`;
+                  });
+                  slider.appendChild(teamCard);
+                });
+              })
+              .catch(error => console.error('Error loading teams:', error));
+          </script>
+
+        <!-- Main Content Section Start -->
+        <div class="main-content--section pbottom--30">
+            <div class="container">
+                <!-- Main Content Start -->
+                <div class="main--content">
+                    <!-- Post Items Start -->
+                    <div class="post--items post--items-1 pd--30-0">
+                        <div class="row gutter--15">
+                            <div class="col-md-6">
+                                <!-- Post Item Start -->
+                                <div class="post--item post--layout-1 post--title-larger">
+                                    <div class="post--img">
+                                        <a href="news-single-v1.html" class="thumb"><img src="./news-img/news1.webp" alt=""></a>
+                                        <a href="#" class="icon"><i class="fa fa-flash"></i></a>
+
+                                        <div class="post--map">
+                                            <div class="map--wrapper">
+                                                <div data-map-latitude="23.790546" data-map-longitude="90.375583" data-map-zoom="6" data-map-marker="[[23.790546, 90.375583]]"></div>
+                                            </div>
+                                        </div>
+
+                                        <div class="post--info">
+                                            <ul class="nav meta">
+                                                <li><a href="#">Around the NFL Staff</a></li>
+                                                <li><a href="#">26 noviembre 2024</a></li>
+                                            </ul>
+
+                                            <div class="title">
+                                                <h2 class="h4"><a href="news-single-v1.html" class="btn-link">El mariscal de campo de los Jets, Aaron Rodgers, dice que su futuro como jugador es incierto, pero "la primera opción" sería Nueva York.</a></h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Post Item End -->
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="row gutter--15">
+                                    <div class="col-xs-6 col-xss-12">
+                                        <!-- Post Item Start -->
+                                        <div class="post--item post--layout-1 post--title-large">
+                                            <div class="post--img">
+                                                <a href="news-single-v1.html" class="thumb"><img src="./news-img/news2.webp" alt=""></a>
+                                                <a href="#" class="icon"><i class="fa fa-flash"></i></a>
+
+                                                <div class="post--info">
+                                                    <ul class="nav meta">
+                                                        <li><a href="#">Kevin Patra</a></li>
+                                                        <li><a href="#">26 noviembre 2024</a></li>
+                                                    </ul>
+
+                                                    <div class="title">
+                                                        <h2 class="h4"><a href="news-single-v1.html" class="btn-link">Los Raiders se preparan para que el mariscal de campo Aidan O'Connell inicie el viernes contra los Chiefs.</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Post Item End -->
+                                    </div>
+
+                                    <div class="col-xs-6 hidden-xss">
+                                        <!-- Post Item Start -->
+                                        <div class="post--item post--layout-1 post--title-large">
+                                            <div class="post--img">
+                                                <a href="news-single-v1.html" class="thumb"><img src="./news-img/news3.webp" alt=""></a>
+                                                <a href="#" class="icon"><i class="fa fa-flash"></i></a>
+
+                                                <div class="post--map">
+
+                                                    <div class="map--wrapper">
+                                                        <div data-map-latitude="23.790546" data-map-longitude="90.375583" data-map-zoom="6" data-map-marker="[[23.790546, 90.375583]]"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="post--info">
+                                                    <ul class="nav meta">
+                                                        <li><a href="#">Nick Shook</a></li>
+                                                        <li><a href="#">25 noviembre 2024</a></li>
+                                                    </ul>
+
+                                                    <div class="title">
+                                                        <h2 class="h4"><a href="news-single-v1.html" class="btn-link">Lo que aprendimos de la victoria de Baltimore por 30-23.</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Post Item End -->
+                                    </div>
+
+                                    <div class="col-xs-6 hidden-xss">
+                                        <!-- Post Item Start -->
+                                        <div class="post--item post--layout-1 post--title-large">
+                                            <div class="post--img">
+                                                <a href="news-single-v1.html" class="thumb"><img src="./news-img/news4.webp" alt=""></a>
+                                                <a href="#" class="icon"><i class="fa fa-flash"></i></a>
+
+                                                <div class="post--info">
+                                                    <ul class="nav meta">
+                                                        <li><a href="#">25 noviembre 2024</a></li>
+                                                    </ul>
+
+                                                    <div class="title">
+                                                        <h2 class="h4"><a href="news-single-v1.html" class="btn-link">Panorama de los playoffs de la NFL: Probabilidades de postemporada para cada equipo al entrar en la Semana 13.</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Post Item End -->
+                                    </div>
+
+                                    <div class="col-xs-6 hidden-xss">
+                                        <!-- Post Item Start -->
+                                        <div class="post--item post--layout-1 post--title-large">
+                                            <div class="post--img">
+                                                <a href="news-single-v1.html" class="thumb"><img src="./news-img/news5.webp" alt=""></a>
+                                                <a href="#" class="icon"><i class="fa fa-flash"></i></a>
+
+                                                <div class="post--map">
+
+                                                    <div class="map--wrapper">
+                                                        <div data-map-latitude="23.790546" data-map-longitude="90.375583" data-map-zoom="6" data-map-marker="[[23.790546, 90.375583]]"></div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="post--info">
+                                                    <ul class="nav meta">
+                                                        <li><a href="#">Nick Shook</a></li>
+                                                        <li><a href="#">25 noviembre 2024</a></li>
+                                                    </ul>
+
+                                                    <div class="title">
+                                                        <h2 class="h4"><a href="news-single-v1.html" class="btn-link">Escenarios para asegurar un lugar en los playoffs en la Semana 13 de la temporada 2024 de la NFL.</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Post Item End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Post Items End -->
+                </div>
+                <!-- Main Content End -->
+
+                <div class="row">
+                    <!-- Main Content Start -->
+                    <div class="main--content col-md-8 col-sm-7" data-sticky-content="true">
+                        <div class="sticky-content-inner">
+                            <div class="row">
+                                
+
+                                <!-- Technology Start -->
+                                <div class="col-md-6 ptop--30 pbottom--30">
+                                    <!-- Post Items Title Start -->
+                                    <div class="post--items-title" data-ajax="tab">
+                                        <h2 class="h4">Más noticias</h2>
+
+                                        <div class="nav">
+                                            <a href="#" class="prev btn-link" data-ajax-action="load_prev_technology_posts">
+                                                <i class="fa fa-long-arrow-left"></i>
+                                            </a>
+
+                                            <span class="divider">/</span>
+
+                                            <a href="#" class="next btn-link" data-ajax-action="load_next_technology_posts">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Post Items Title End -->
+
+                                    <!-- Post Items Start -->
+                                    <div class="post--items post--items-3" data-ajax-content="outer">
+                                        <ul class="nav" data-ajax-content="inner">
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-1">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="./home-news/d1.webp" alt=""></a>
+                                                        <a href="#" class="icon"><i class="fa fa-heart-o"></i></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Christian Gonzales</a></li>
+                                                                <li><a href="#">hoy 03:52 pm</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Los delfines no activarán a Shaquil Barrett fuera de la lista de reserva/retirado</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="./home-news/d2.webp" ;" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">Hoy</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Drew Lock comenzará para los Gigantes en el Día de Acción de Gracias vs. Cowboys</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="./home-news/d3.webp" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">Hoy</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Semana 13 de la NFL: Lo que aprendimos de la triple cartelera del Día de Acción de Gracias</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="./home-news/d4.webp" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">NFL NEWS</a></li>
+                                                                <li><a href="#">Hoy</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Semana 13 Jueves inactivos: Tripleheader de Acción de Gracias</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="./home-news/d5.webp" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">NFL NEWS</a></li>
+                                                                <li><a href="#">Hoy</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Chiefs activan a Isiah Pacheco fuera de la reserva lesionada; RB en línea para regresar el Black Friday vs. Raiders</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                        </ul>
+
+                                        <!-- Preloader Start -->
+                                        <div class="preloader bg--color-0--b" data-preloader="1">
+                                            <div class="preloader--inner"></div>
+                                        </div>
+                                        <!-- Preloader End -->
+                                    </div>
+                                    <!-- Post Items End -->
+                                </div>
+                                <!-- Technology End -->
+
+                                <!-- Finance Start -->
+                                <div class="col-md-12 ptop--30 pbottom--30">
+                                    <!-- Post Items Title Start -->
+                                    <div class="post--items-title" data-ajax="tab">
+                                        <h2 class="h4">NFL hoy</h2>
+
+                                        <div class="nav">
+                                            <a href="#" class="prev btn-link" data-ajax-action="load_prev_finance_posts">
+                                                <i class="fa fa-long-arrow-left"></i>
+                                            </a>
+
+                                            <span class="divider">/</span>
+
+                                            <a href="#" class="next btn-link" data-ajax-action="load_next_finance_posts">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Post Items Title End -->
+
+                                    <!-- Post Items Start -->
+                                    <div class="post--items post--items-2" data-ajax-content="outer">
+                                        <ul class="nav row" data-ajax-content="inner">
+                                            <li class="col-md-6">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-2">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/finance-01.jpg" alt=""></a>
+                                                        <a href="#" class="cat">Business</a>
+                                                        <a href="#" class="icon"><i class="fa fa-star-o"></i></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Vassago</a></li>
+                                                                <li><a href="#">Today 03:30 am</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas.</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+
+                                            <li class="col-md-6">
+                                                <ul class="nav row">
+                                                    <li class="col-xs-12 hidden-md hidden-lg">
+                                                        <!-- Divider Start -->
+                                                        <hr class="divider">
+                                                        <!-- Divider End -->
+                                                    </li>
+
+                                                    <li class="col-xs-6">
+                                                        <!-- Post Item Start -->
+                                                        <div class="post--item post--layout-2">
+                                                            <div class="post--img">
+                                                                <a href="news-single-v1.html" class="thumb"><img src="img/home-img/finance-02.jpg" alt=""></a>
+
+                                                                <div class="post--info">
+                                                                    <ul class="nav meta">
+                                                                        <li><a href="#">Zepar</a></li>
+                                                                        <li><a href="#">Today 03:52 pm</a></li>
+                                                                    </ul>
+
+                                                                    <div class="title">
+                                                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Post Item End -->
+                                                    </li>
+
+                                                    <li class="col-xs-6">
+                                                        <!-- Post Item Start -->
+                                                        <div class="post--item post--layout-2">
+                                                            <div class="post--img">
+                                                                <a href="news-single-v1.html" class="thumb"><img src="img/home-img/finance-03.jpg" alt=""></a>
+
+                                                                <div class="post--info">
+                                                                    <ul class="nav meta">
+                                                                        <li><a href="#">Demiurge</a></li>
+                                                                        <li><a href="#">Today 03:02 pm</a></li>
+                                                                    </ul>
+
+                                                                    <div class="title">
+                                                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Post Item End -->
+                                                    </li>
+
+                                                    <li class="col-xs-12">
+                                                        <!-- Divider Start -->
+                                                        <hr class="divider">
+                                                        <!-- Divider End -->
+                                                    </li>
+
+                                                    <li class="col-xs-6">
+                                                        <!-- Post Item Start -->
+                                                        <div class="post--item post--layout-2">
+                                                            <div class="post--img">
+                                                                <a href="news-single-v1.html" class="thumb"><img src="img/home-img/finance-04.jpg" alt=""></a>
+
+                                                                <div class="post--info">
+                                                                    <ul class="nav meta">
+                                                                        <li><a href="#">Demiurge</a></li>
+                                                                        <li><a href="#">Today 02:05 am</a></li>
+                                                                    </ul>
+
+                                                                    <div class="title">
+                                                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Post Item End -->
+                                                    </li>
+
+                                                    <li class="col-xs-6">
+                                                        <!-- Post Item Start -->
+                                                        <div class="post--item post--layout-2">
+                                                            <div class="post--img">
+                                                                <a href="news-single-v1.html" class="thumb"><img src="img/home-img/finance-05.jpg" alt=""></a>
+
+                                                                <div class="post--info">
+                                                                    <ul class="nav meta">
+                                                                        <li><a href="#">Zepar</a></li>
+                                                                        <li><a href="#">Today 12:35 am</a></li>
+                                                                    </ul>
+
+                                                                    <div class="title">
+                                                                        <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be</a></h3>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Post Item End -->
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+
+                                        <!-- Preloader Start -->
+                                        <div class="preloader bg--color-0--b" data-preloader="1">
+                                            <div class="preloader--inner"></div>
+                                        </div>
+                                        <!-- Preloader End -->
+                                    </div>
+                                    <!-- Post Items End -->
+                                </div>
+                                <!-- Finance End -->
+
+                                <!-- Politics Start -->
+                                <div class="col-md-6 ptop--30 pbottom--30">
+                                    <!-- Post Items Title Start -->
+                                    <div class="post--items-title" data-ajax="tab">
+                                        <h2 class="h4">Jugadas destacadas</h2>
+
+                                        <div class="nav">
+                                            <a href="#" class="prev btn-link" data-ajax-action="load_prev_politics_posts">
+                                                <i class="fa fa-long-arrow-left"></i>
+                                            </a>
+
+                                            <span class="divider">/</span>
+
+                                            <a href="#" class="next btn-link" data-ajax-action="load_next_politics_posts">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Post Items Title End -->
+
+                                    <!-- Post Items Start -->
+                                    <div class="post--items post--items-2" data-ajax-content="outer">
+                                        <ul class="nav row gutter--15" data-ajax-content="inner">
+                                            <li class="col-xs-12">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-1">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/politics-01.jpg" alt=""></a>
+                                                        <a href="#" class="cat">Election</a>
+                                                        <a href="#" class="icon"><i class="fa fa-fire"></i></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Astaroth</a></li>
+                                                                <li><a href="#">Yeasterday 03:52 pm</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be distracted by</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li class="col-xs-12">
+                                                <!-- Divider Start -->
+                                                <hr class="divider">
+                                                <!-- Divider End -->
+                                            </li>
+                                            <li class="col-xs-6">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-2">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/politics-02.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Hantu Raya</a></li>
+                                                                <li><a href="#">26 noviembre 2024</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will done</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li class="col-xs-6">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-2">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/politics-03.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Astaroth</a></li>
+                                                                <li><a href="#">26 noviembre 2024</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will done</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li class="col-xs-12">
+                                                <!-- Divider Start -->
+                                                <hr class="divider">
+                                                <!-- Divider End -->
+                                            </li>
+                                            <li class="col-xs-6">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-2">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/politics-04.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Astaroth</a></li>
+                                                                <li><a href="#">26 noviembre 2024</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will done</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li class="col-xs-6">
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-2">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/politics-05.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Hantu Raya</a></li>
+                                                                <li><a href="#">26 noviembre 2024</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will done</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                        </ul>
+
+                                        <!-- Preloader Start -->
+                                        <div class="preloader bg--color-0--b" data-preloader="1">
+                                            <div class="preloader--inner"></div>
+                                        </div>
+                                        <!-- Preloader End -->
+                                    </div>
+                                    <!-- Post Items End -->
+                                </div>
+                                <!-- Politics End -->
+
+                                <!-- Sports Start -->
+                                <div class="col-md-6 ptop--30 pbottom--30">
+                                    <!-- Post Items Title Start -->
+                                    <div class="post--items-title" data-ajax="tab">
+                                        <h2 class="h4">Fantasy</h2>
+
+                                        <div class="nav">
+                                            <a href="#" class="prev btn-link" data-ajax-action="load_prev_sports_posts">
+                                                <i class="fa fa-long-arrow-left"></i>
+                                            </a>
+
+                                            <span class="divider">/</span>
+
+                                            <a href="#" class="next btn-link" data-ajax-action="load_next_sports_posts">
+                                                <i class="fa fa-long-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- Post Items Title End -->
+
+                                    <!-- Post Items Start -->
+                                    <div class="post--items post--items-3" data-ajax-content="outer">
+                                        <ul class="nav" data-ajax-content="inner">
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-1">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/sports-01.jpg" alt=""></a>
+                                                        <a href="#" class="cat">Basketball</a>
+                                                        <a href="#" class="icon"><i class="fa fa-eye"></i></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bathin</a></li>
+                                                                <li><a href="#">Yeasterday 03:52 pm</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">It is a long established fact that a reader will be distracted by</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/sports-02.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">26 noviembre 2024</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted by the readable</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/sports-03.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted by the readable</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/sports-04.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted by the readable</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/home-img/sports-05.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Bune</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted by the readable</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                        </ul>
+
+                                        <!-- Preloader Start -->
+                                        <div class="preloader bg--color-0--b" data-preloader="1">
+                                            <div class="preloader--inner"></div>
+                                        </div>
+                                        <!-- Preloader End -->
+                                    </div>
+                                    <!-- Post Items End -->
+                                </div>
+                                <!-- Sports End -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Main Content End -->
+
+                    <!-- Main Sidebar Start -->
+                    <div class="main--sidebar col-md-4 col-sm-5 ptop--30 pbottom--30" data-sticky-content="true">
+                        <div class="sticky-content-inner">
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <!-- Ad Widget Start -->
+                                <div class="ad--widget">
+                                    <a href="#">
+                                        <img src="./img/logo.png" alt="">
+                                    </a>
+                                </div>
+                                <!-- Ad Widget End -->
+                            </div>
+                            <!-- Widget End -->
+
+
+
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Noticias de último momento</h2>
+                                    <i class="icon fa fa-newspaper-o"></i>
+                                </div>
+
+                                <!-- List Widgets Start -->
+                                <div class="list--widget list--widget-1">
+                                    <div class="list--widget-nav" data-ajax="tab">
+                                        <ul class="nav nav-justified">
+                                            <li>
+                                                <a href="#" data-ajax-action="load_widget_hot_news">Lesiones</a>
+                                            </li>
+                                            <li class="active">
+                                                <a href="#" data-ajax-action="load_widget_trendy_news">Noticias destacadas</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" data-ajax-action="load_widget_most_watched">Más visto</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Post Items Start -->
+                                    <div class="post--items post--items-3" data-ajax-content="outer">
+                                        <ul class="nav" data-ajax-content="inner">
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/widgets-img/news-widget-01.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Ninurta</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/widgets-img/news-widget-02.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Orcus</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/widgets-img/news-widget-03.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Rahab</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                            <li>
+                                                <!-- Post Item Start -->
+                                                <div class="post--item post--layout-3">
+                                                    <div class="post--img">
+                                                        <a href="news-single-v1.html" class="thumb"><img src="img/widgets-img/news-widget-04.jpg" alt=""></a>
+
+                                                        <div class="post--info">
+                                                            <ul class="nav meta">
+                                                                <li><a href="#">Tannin</a></li>
+                                                                <li><a href="#">16 April 2017</a></li>
+                                                            </ul>
+
+                                                            <div class="title">
+                                                                <h3 class="h4"><a href="news-single-v1.html" class="btn-link">Long established fact that a reader will be distracted</a></h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Post Item End -->
+                                            </li>
+                                        </ul>
+
+                                        <!-- Preloader Start -->
+                                        <div class="preloader bg--color-0--b" data-preloader="1">
+                                            <div class="preloader--inner"></div>
+                                        </div>
+                                        <!-- Preloader End -->
+                                    </div>
+                                    <!-- Post Items End -->
+                                </div>
+                                <!-- List Widgets End -->
+                            </div>
+                            <!-- Widget End -->
+
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Espacio publicitario</h2>
+                                    <i class="icon fa fa-bullhorn"></i>
+                                </div>
+
+                                <!-- Ad Widget Start -->
+                                <div class="ad--widget">
+                                    <a href="#">
+                                        <img src="img/ads-img/ad-300x250-2.jpg" alt="">
+                                    </a>
+                                </div>
+                                <!-- Ad Widget End -->
+                            </div>
+                            <!-- Widget End -->
+                        </div>
+                    </div>
+                    <!-- Main Sidebar End -->
+                </div>
+
+            </div>
+        </div>
+        <!-- Main Content Section End -->
+
+        <!-- Footer Section Start -->
+        <footer class="footer--section">
+            <!-- Footer Widgets Start -->
+            <div class="footer--widgets pd--30-0 bg--color-2">
+                <div class="container">
+                    <div class="row AdjustRow">
+                        <!-- Sobre Nosotros -->
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Sobre Nosotros</h2>
+                                    <i class="icon fa fa-exclamation"></i>
+                                </div>
+                                <div class="about--widget">
+                                    <div class="content">
+                                        <p>En FanFrenzy, conectamos a los fanáticos con las últimas noticias, estadísticas y todo lo que necesitan para vivir la pasión del deporte.</p>
+                                    </div>
+                                    <div class="action">
+                                        <a href="#" class="btn-link">Leer Más<i class="fa flm fa-angle-double-right"></i></a>
+                                    </div>
+                                    <ul class="nav">
+                                        <li>
+                                            <i class="fa fa-map"></i>
+                                            <span>Av. Principal 123, Ciudad Falsa, País XYZ</span>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope-o"></i>
+                                            <a href="mailto:contacto@fanfrenzy.com">contacto@fanfrenzy.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone"></i>
+                                            <a href="tel:+123456789">+123 456 789</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Enlaces Útiles -->
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Enlaces Útiles</h2>
+                                    <i class="icon fa fa-expand"></i>
+                                </div>
+                                <div class="links--widget">
+                                    <ul class="nav">
+                                        <li><a href="#" class="fa-angle-right">Equipos</a></li>
+                                        <li><a href="#" class="fa-angle-right">Calendario</a></li>
+                                        <li><a href="#" class="fa-angle-right">Términos y Condiciones</a></li>
+                                        <li><a href="#" class="fa-angle-right">Noticias Destacadas</a></li>
+                                        <li><a href="#" class="fa-angle-right">Contáctanos</a></li>
+                                        <li><a href="#" class="fa-angle-right">Política de Privacidad</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Publicidad -->
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Publicidad</h2>
+                                    <i class="icon fa fa-bullhorn"></i>
+                                </div>
+                                <div class="links--widget">
+                                    <ul class="nav">
+                                        <li><a href="#" class="fa-angle-right">Publica tu Anuncio</a></li>
+                                        <li><a href="#" class="fa-angle-right">Precios de Anuncios</a></li>
+                                        <li><a href="#" class="fa-angle-right">Planes Mensuales/Anuales</a></li>
+                                        <li><a href="#" class="fa-angle-right">Solicita Información</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <!-- Contrataciones -->
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Trabaja con Nosotros</h2>
+                                    <i class="icon fa fa-user-o"></i>
+                                </div>
+                                <div class="links--widget">
+                                    <ul class="nav">
+                                        <li><a href="#" class="fa-angle-right">Oportunidades Disponibles</a></li>
+                                        <li><a href="#" class="fa-angle-right">Únete a Nuestro Equipo</a></li>
+                                        <li><a href="#" class="fa-angle-right">Envíanos tu CV</a></li>
+                                        <li><a href="#" class="fa-angle-right">Trabajos Freelance</a></li>
+                                        <li><a href="#" class="fa-angle-right">Proceso de Aplicación</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Widgets End -->
+        
+            <!-- Footer Copyright Start -->
+            <div class="footer--copyright bg--color-3">
+                <div class="social--bg bg--color-1"></div>
+                <div class="container">
+                    <p class="text float--left">&copy; 2024 <a href="#">FanFrenzy</a>. Todos los derechos reservados</p>
+                    <ul class="nav social float--right">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                    </ul>
+                    <ul class="nav links float--right">
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Footer Copyright End -->
+        </footer>
+        
+        <!-- Footer Section End -->
+    </div>
+    <!-- Wrapper End -->
+
+ 
+    <!-- Sticky Social End -->
+
+    <!-- Back To Top Button Start -->
+    <div id="backToTop">
+        <a href="#"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+    <!-- Back To Top Button End -->
+
+    <!-- ==== jQuery Library ==== -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- ==== Bootstrap Framework ==== -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- ==== StickyJS Plugin ==== -->
+    <script src="js/jquery.sticky.min.js"></script>
+
+    <!-- ==== HoverIntent Plugin ==== -->
+    <script src="js/jquery.hoverIntent.min.js"></script>
+
+    <!-- ==== Marquee Plugin ==== -->
+    <script src="js/jquery.marquee.min.js"></script>
+
+    <!-- ==== Validation Plugin ==== -->
+    <script src="js/jquery.validate.min.js"></script>
+
+    <!-- ==== Isotope Plugin ==== -->
+    <script src="js/isotope.min.js"></script>
+
+    <!-- ==== Resize Sensor Plugin ==== -->
+    <script src="js/resizesensor.min.js"></script>
+
+    <!-- ==== Sticky Sidebar Plugin ==== -->
+    <script src="js/theia-sticky-sidebar.min.js"></script>
+
+    <!-- ==== Zoom Plugin ==== -->
+    <script src="js/jquery.zoom.min.js"></script>
+
+    <!-- ==== Bar Rating Plugin ==== -->
+    <script src="js/jquery.barrating.min.js"></script>
+
+    <!-- ==== Countdown Plugin ==== -->
+    <script src="js/jquery.countdown.min.js"></script>
+
+    <!-- ==== RetinaJS Plugin ==== -->
+    <script src="js/retina.min.js"></script>
+
+    <!-- ==== Google Map API ==== -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBK9f7sXWmqQ1E-ufRXV3VpXOn_ifKsDuc"></script>
+
+    <!-- ==== Main JavaScript ==== -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
